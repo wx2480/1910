@@ -1,0 +1,33 @@
+
+
+
+特征：
+价差
+净买入和净流出
+小中大特大单
+vwap
+技术指标
+ATR
+rank
+ts_rank(0,1)
+没有成交但是订单簿发生了变化
+decay
+truncated
+power
+
+
+LOB
+VOI
+spread
+
+
+
+class Data(获得什么数据）
+class Factor
+class 
+内存中一天是多少（假设20G）
+那么最多4天，一次性load
+
+
+
+因子：
