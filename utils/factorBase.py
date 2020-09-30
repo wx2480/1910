@@ -3,6 +3,9 @@ import pandas as pd
 
 
 class FactorBase(object):
+    '''
+    时间长度不相等，暂时选取的是每一个因子用相同数量的数据点来计算
+    '''
     @staticmethod
     def rolling_window(a, window):
         shape = (a.shape[0] - window + 1, window, a.shape[1])
@@ -74,11 +77,10 @@ class FactorBase(object):
         return factor
 
     @staticmethod
-    def buy_concentrate(_data, window=200):
+    def order_concentrate(_data, window=200):
         def f(vol):
             return np.sum(np.square(vol))/np.square(np.sum(vol))
         data = _data.copy()
-        data = data[data['dir'] == 'BUY']
         factor = data['vol'].rolling(window).apply(f, raw=True)
 
         factor = pd.Series(factor, index=data.index, name='factor')

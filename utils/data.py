@@ -31,7 +31,7 @@ class Data(object):
         trade_columns = ['kind', 'pro', 'ts', 'px', 'vol', 'dir', 'tid', 'recTs']
         self._trade[str(name) + '.' + str(time)].columns = trade_columns
 
-        dtype = {'ts': int, 'px': float, 'vol': float, 'dir': str, 'recTs': int}
+        dtype = {'ts': str, 'px': float, 'vol': float, 'dir': str, 'recTs': str}
         self._trade[str(name) + '.' + str(time)] = self._trade[str(name) + '.' + str(time)].astype(dtype)
 
     def get_pro(self, kind, pro):
