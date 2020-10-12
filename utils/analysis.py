@@ -1,3 +1,4 @@
+import matplotlib.pyplot as plt
 import pandas as pd
 
 
@@ -10,3 +11,9 @@ class Analysis(object):
         # N = len(ret)
         # ans = 1 - np.sum(np.square(factor - ret)) * 6 / (N * (N * N - 1))
         return ans.iloc[0]
+
+
+class Figure(object):
+    @staticmethod
+    def plot(y: pd.DataFrame):
+        pass
